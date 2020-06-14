@@ -1,16 +1,16 @@
-# deno_webview
+# webview_deno
 
-[![license](https://img.shields.io/github/license/eliassjogreen/deno_webview)](https://github.com/eliassjogreen/deno_webview/blob/master/LICENSE)
-[![stars](https://img.shields.io/github/stars/eliassjogreen/deno_webview)](https://github.com/eliassjogreen/deno_webview/stargazers)
-[![issues](https://img.shields.io/github/issues/eliassjogreen/deno_webview)](https://github.com/eliassjogreen/deno_webview/issues)
-[![ci](https://github.com/eliassjogreen/deno_webview/workflows/ci/badge.svg)](https://github.com/eliassjogreen/deno_webview/actions)
-[![releases](https://img.shields.io/github/downloads/eliassjogreen/deno_webview/total)](https://github.com/eliassjogreen/deno_webview/releases/latest/)
+[![license](https://img.shields.io/github/license/webview/deno_webview)](https://github.com/webview/deno_webview/blob/master/LICENSE)
+[![stars](https://img.shields.io/github/stars/webview/deno_webview)](https://github.com/webview/deno_webview/stargazers)
+[![issues](https://img.shields.io/github/issues/webview/deno_webview)](https://github.com/webview/deno_webview/issues)
+[![ci](https://github.com/webview/deno_webview/workflows/ci/badge.svg)](https://github.com/webview/deno_webview/actions)
+[![releases](https://img.shields.io/github/downloads/webview/deno_webview/total)](https://github.com/webview/deno_webview/releases/latest/)
 [![deno version](https://img.shields.io/badge/deno-1.0.0-success)](https://github.com/denoland/deno)
 [![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/deno.land/x/webview/mod.ts)
 
 This project provides [deno](https://github.com/denoland/deno) bindings for
-[webview](https://github.com/zserge/webview) using the
-[webview rust bindings](https://github.com/Boscop/web-view). Webview is a tiny
+[webview](https://github.com/webview/webview) using the
+[webview rust bindings](https://github.com/webview/webview_rust). Webview is a tiny
 cross-platform library to render web-based GUIs for desktop applications. This
 project is still in an early stage of development and stability is sometimes
 questionable. The plugin should be compatible with MacOS (recently ran into some
@@ -93,7 +93,7 @@ deno is required (mostly).
 To clone the repo simply run the following:
 
 ```
-git clone https://github.com/eliassjogreen/deno_webview.git
+git clone https://github.com/webview/deno_webview.git
 ```
 
 and then cd into the repo:
@@ -104,9 +104,8 @@ cd deno_webview
 
 ### Building
 
-Building deno_webview takes about 20-50 minutes the first time (then like a
-minute) depending on your operating system. When building on Windows admin is
-required. Building is easiest done by running:
+Building deno_webview takes about two minutes depending on your operating system.
+When building on Windows admin is required. Building is easiest done by running:
 
 ```
 deno run -A scripts/build.ts
@@ -133,11 +132,11 @@ cargo build --release --locked --no-default-features
 ### Running
 
 To run deno_webview without automatically downloading the binaries from
-[releases](https://github.com/eliassjogreen/deno_webview/releases) you will need
+[releases](https://github.com/webview/deno_webview/releases) you will need
 to use the enviornment variable `DENO_WEBVIEW_PLUGIN` and set it to the path where the binaries
 are located. This is usually `file://./target/release`. The process of running a
 using local binaries can be easier to do using the
-[dev script](https://github.com/eliassjogreen/deno_webview/tree/master/scripts/dev.ts):
+[dev script](https://github.com/webview/deno_webview/tree/master/scripts/dev.ts):
 
 ```
 deno -A scripts/dev.ts example.ts
@@ -168,6 +167,6 @@ Just remember to format using `deno -A scripts/fmt.ts` (`deno fmt` and
 ### Rust
 
 - [deno_core](https://crates.io/crates/deno_core)
-- [webview-sys](https://crates.io/crates/webview-sys)
+- [webview_rust](https://github.com/webview/webview_rust)
 - [serde](https://crates.io/crates/serde)
 - [serde_json](https://crates.io/crates/serde_json)

@@ -1,4 +1,4 @@
-export async function fmt(mshtml: boolean = Deno.args.includes("mshtml")) {
+export async function fmt() {
   const clippy = Deno.run({
     cmd: ["cargo", "clippy", "--release", "--locked"],
   });

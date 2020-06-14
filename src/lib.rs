@@ -59,7 +59,7 @@ struct WebViewNewResult {
 fn op_webview_new(
     _interface: &mut dyn Interface,
     data: &[u8],
-    _zero_copy: Option<ZeroCopyBuf>,
+    _zero_copy: &mut [ZeroCopyBuf],
 ) -> Op {
     let mut response: WebViewResponse<WebViewNewResult> = WebViewResponse {
         err: None,
@@ -97,14 +97,6 @@ fn op_webview_new(
     Op::Sync(result)
 }
 
-// extern "C" fn ffi_invoke_handler(webview: *mut CWebView, arg: *const c_char) {
-//     unsafe {
-//         let arg = CStr::from_ptr(arg).to_string_lossy().to_string();
-//
-//         println!("{}", arg);
-//     }
-// }
-
 #[derive(Deserialize)]
 struct WebViewExitParams {
     id: u32,
@@ -116,7 +108,7 @@ struct WebViewExitResult {}
 fn op_webview_exit(
     _interface: &mut dyn Interface,
     data: &[u8],
-    _zero_copy: Option<ZeroCopyBuf>,
+    _zero_copy: &mut [ZeroCopyBuf],
 ) -> Op {
     let mut response: WebViewResponse<WebViewExitResult> = WebViewResponse {
         err: None,
@@ -154,7 +146,7 @@ struct WebViewEvalResult {}
 fn op_webview_eval(
     _interface: &mut dyn Interface,
     data: &[u8],
-    _zero_copy: Option<ZeroCopyBuf>,
+    _zero_copy: &mut [ZeroCopyBuf],
 ) -> Op {
     let mut response: WebViewResponse<WebViewEvalResult> = WebViewResponse {
         err: None,
@@ -190,7 +182,7 @@ struct WebViewSetTitleResult {}
 fn op_webview_set_title(
     _interface: &mut dyn Interface,
     data: &[u8],
-    _zero_copy: Option<ZeroCopyBuf>,
+    _zero_copy: &mut [ZeroCopyBuf],
 ) -> Op {
     let mut response: WebViewResponse<WebViewSetTitleResult> = WebViewResponse {
         err: None,
@@ -227,7 +219,7 @@ struct WebViewRunResult {}
 fn op_webview_run(
     _interface: &mut dyn Interface,
     data: &[u8],
-    _zero_copy: Option<ZeroCopyBuf>,
+    _zero_copy: &mut [ZeroCopyBuf],
 ) -> Op {
     let mut response: WebViewResponse<WebViewRunResult> = WebViewResponse {
         err: None,
@@ -262,7 +254,7 @@ struct NotimplementedResult {}
 fn op_not_implemented(
     _interface: &mut dyn Interface,
     _data: &[u8],
-    _zero_copy: Option<ZeroCopyBuf>,
+    _zero_copy: &mut [ZeroCopyBuf],
 ) -> Op {
     let mut response: WebViewResponse<NotimplementedResult> = WebViewResponse {
         err: None,
